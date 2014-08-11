@@ -5,22 +5,25 @@
     <meta charset="utf-8" />
     <title>Bouncing Bird</title>
 
-    <style>
-        #game_div {
-            width: 400px;
-            margin: auto;
-            margin-top: 50px;
-        }
-    </style>
-
-    <script type="text/javascript" src="phaser.min.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="src/phaser.min.js"></script>
+    <script type="text/javascript" src="src/Boot.js"></script>
+    <script type="text/javascript" src="src/Preloader.js"></script>
+    <script type="text/javascript" src="src/MainMenu.js"></script>
+    <script type="text/javascript" src="src/Game.js"></script>
 </head>
 
 <body>
-
-<div id="game_div"> </div>
-
+    <script>
+        (function() {
+            var game = new Phaser.Game(400, 490, Phaser.AUTO, 'game');
+            game.state.add('Boot', Bird.Boot);
+            game.state.add('Preloader', Bird.Preloader);
+            game.state.add('MainMenu', Bird.MainMenu);
+            game.state.add('Game', Bird.Game);
+            // start the Boot state
+            game.state.start('Boot');
+        })();
+    </script>
 </body>
 
 </html>
