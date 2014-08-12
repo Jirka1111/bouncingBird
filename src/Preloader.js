@@ -17,6 +17,8 @@ Bird.Preloader.prototype = {
         this.load.image("spikes", "img/spikes.png");
         this.load.image("spikes2", "img/spikes2.png");
 
+        this.load.image("sideSpikes", "img/sideSpikes.png");
+
         this.load.image("pause", "img/pause.png");
         this.load.spritesheet('button-start',
             'img/button-start.png', 401, 143);
